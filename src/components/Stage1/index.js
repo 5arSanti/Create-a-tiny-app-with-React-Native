@@ -16,7 +16,7 @@ const Stage1 = () => {
             validationSchema={Yup.object({
                 player: Yup.string()
                 .min(3, "Must be more than 3 char")
-                .max(15, "Must be more less tan 15 char")
+                .max(15, "Must be less tan 15 characters")
                 .required("Sorry, the name is required")
             })}
             onSubmit={(values, {resetForm}) => {
@@ -32,12 +32,19 @@ const Stage1 = () => {
                             marginHorizontal:50,
                             marginTop: 50,
                         }}
+
+                        renderErrorMessage={errors.player && touched.player}
+                        errorMessage={errors.player}
+                        errorStyle={{
+                            marginHorizontal: 50,
+                        }}
+
                         onChangeText={handleChange("player")}
                         onBlur={handleBlur("player")}
                         valye={values.player}
                     />
                     <Button
-                        buttonStyle={{}}
+                        buttonStyle={styles.button}
                         title="Add player"
                         onPress={handleSubmit}
                     />
@@ -46,4 +53,12 @@ const Stage1 = () => {
         </Formik>
     );
 }
+
+const styles = StyleSheet.create({
+    button: {
+        backgroundColor: "#DB3eb1",
+        marginTop: 20,
+    }
+})
+
 export { Stage1 };

@@ -9,6 +9,15 @@ class MyProvider extends Component {
         result: ""
     }
 
+    addPlayerHandler = (name) => {
+        this.setState((prevState, props) => ({
+            player:[
+                ...prevState.players,
+                name
+            ]
+        }))
+    }
+
     render() {
         return(
             <>
