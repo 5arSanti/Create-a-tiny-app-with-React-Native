@@ -6,6 +6,9 @@ import { MyContext, MyProvider } from "./src/Context";
 import { Stage1 } from "./src/components/Stage1";
 import { Stage2 } from "./src/components/Stage2";
 
+import Toast from "react-native-toast-message";
+
+
 class App extends Component {
 	// static contextType = MyContext;
 
@@ -21,6 +24,7 @@ class App extends Component {
 						</MyContext.Consumer>
 					</View>
 				</ScrollView>
+				<Toast ref={(ref) => Toast.setRef(ref)} />
 			</MyProvider>
 		);
 	}
