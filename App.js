@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Platform } from 'react-native';
 import { MyContext, MyProvider } from "./src/Context";
 
 //Componentes
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center',
 
-		marginVertical: 100,
+		marginVertical: Platform.OS ==="ios" ? 100 : 50,
 	},
 });
 
