@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { MyContext } from "../../Context";
 
 import { Button } from "react-native-elements"
+import { MainLogo } from "../../utils/tools";
 
 const Stage2 = () => {
     const context = React.useContext(MyContext);
@@ -10,6 +11,7 @@ const Stage2 = () => {
     return(
         <>
             <View>
+                <MainLogo/>
                 <Text>The looser is:</Text>
                 <Text style={{marginTop: 30, fontSize: 30}}>{context.state.result}</Text>
                 <Button

@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import { Input, Button, Text, ListItem } from "react-native-elements"
 
 import {MyContext } from "../../Context";
+import { MainLogo } from "../../utils/tools";
 
 const Stage1 = () => {
     const context = React.useContext(MyContext);
@@ -26,6 +27,17 @@ const Stage1 = () => {
         ))
     );
 
+    const renderTitle = () => {
+        if (context.state.fontsLoaded){
+            return(
+                <MainLogo/>
+            );
+        }
+        else{
+            return(null);
+        }
+    }
+
     return(
         <>
             <Formik
@@ -42,8 +54,9 @@ const Stage1 = () => {
                 }}
             >
                 {({handleChange, handleBlur, handleSubmit, values, touched, errors}) => (
-                    <>
-                        <Text>Who paus the bill</Text>
+                    <>  
+                        {renderTitle()}
+
                         <Input placeholder="Add names here"
                             leftIcon={{type: "antdesign", name:"adduser"}}
                             inputContainerStyle={{

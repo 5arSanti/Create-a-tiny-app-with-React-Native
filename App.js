@@ -10,7 +10,6 @@ import Toast from "react-native-toast-message";
 
 
 class App extends Component {
-	// static contextType = MyContext;
 
 	render(){
 		return (
